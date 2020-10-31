@@ -114,3 +114,11 @@ ttyctl -f
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
+export PYENV_ROOT="$HOME/.pyenv"
+PYENV_BIN=$PYENV_ROOT/bin
+RUST_BIN="$HOME/.cargo/bin"
+GO_BIN="$HOME/go/bin"
+export PATH="$PYENV_BIN:$RUST_BIN:$GO_BIN:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
